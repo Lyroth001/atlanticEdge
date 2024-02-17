@@ -353,8 +353,6 @@ namespace RotoVR.SDK.API
 #endif
         }
 
-        private float _previousAngle;
-
         IEnumerator FollowTargetRoutine()
         {
             if (m_ObservableTarger == null)
@@ -383,11 +381,7 @@ namespace RotoVR.SDK.API
                             rotoAngle = (int)(m_StartRotoAngle + angle);
                             rotoAngle = NormalizeAngle(rotoAngle);
 
-                            if(rotoAngle != _previousAngle)
-                            {
-                                RotateToAngle(GetDirection(rotoAngle, m_RotoData.Angle), rotoAngle, 100);
-                                _previousAngle = rotoAngle;
-                            }
+                            RotateToAngle(GetDirection(rotoAngle, m_RotoData.Angle), rotoAngle, 30);
                         }
 
                         deltaTime = 0;
