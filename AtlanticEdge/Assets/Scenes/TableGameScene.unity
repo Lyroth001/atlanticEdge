@@ -637,8 +637,9 @@ GameObject:
   - component: {fileID: 213229701}
   - component: {fileID: 213229700}
   - component: {fileID: 213229705}
+  - component: {fileID: 213229706}
   m_Layer: 0
-  m_Name: move lever
+  m_Name: rotate lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +654,7 @@ Transform:
   m_GameObject: {fileID: 213229698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.052, y: 0.217, z: 1.891}
+  m_LocalPosition: {x: -0.83, y: 0.223, z: 2.219}
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -836,7 +837,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 92
+  m_Constraints: 110
   m_CollisionDetection: 0
 --- !u!23 &213229703
 MeshRenderer:
@@ -913,6 +914,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.00000047683716, y: 0, z: 0.00000071525574}
+--- !u!114 &213229706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213229698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c2fa7982362044d85edcff549fb75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotoController: {fileID: 0}
 --- !u!1 &243215076
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +942,7 @@ GameObject:
   - component: {fileID: 243215078}
   - component: {fileID: 243215084}
   m_Layer: 0
-  m_Name: rotate lever
+  m_Name: move lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -943,7 +957,7 @@ Transform:
   m_GameObject: {fileID: 243215076}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.052, y: 0.217, z: 2.678}
+  m_LocalPosition: {x: -1.047, y: 0.217, z: 2.41}
   m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -102,4 +102,20 @@ public class RotoController : MonoBehaviour
             _turningLeft = false;
         }
     }
+    
+    public void startLeftRotation()
+    {
+        _turningLeft = true;
+    }
+    
+    public void startRightRotation()
+    {
+        _turningRight = true;
+    }
+    
+    public void stopRotation()
+    {
+        _turningLeft = false;
+        _turningRight = false;
+    }
 }
