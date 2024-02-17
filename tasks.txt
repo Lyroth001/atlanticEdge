@@ -1,0 +1,25 @@
+Elliot
+	Modelling
+	Button
+	Lever
+	Cockpit
+	Arms
+	Missile
+	Sword
+	Monster shit - doesn’t need to be good
+	
+Lye
+	Get the chair
+
+Jake
+	Scripting
+	
+Charlie
+	Scripting
+
+Scripting tasks
+	Prototypes - missles, bullets
+	Enemy behaviour
+	Player movement
+	Buttons
+	Levers
