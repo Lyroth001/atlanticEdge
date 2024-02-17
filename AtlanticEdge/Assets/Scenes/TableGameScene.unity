@@ -837,7 +837,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 110
+  m_Constraints: 62
   m_CollisionDetection: 0
 --- !u!23 &213229703
 MeshRenderer:
@@ -7260,6 +7260,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: eb2bedc5-752f-4112-889d-f4592de51058
     m_ActionName: 'GameMnager/RestartGame[/Keyboard/f5,/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2126656021}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f060d498-63a1-46c0-ae58-5522eb9da041
+    m_ActionName: 'PlayerXRButtons/Space[/Keyboard/x]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerXRButtons
