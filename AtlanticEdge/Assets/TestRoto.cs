@@ -14,7 +14,18 @@ public class TestRoto : MonoBehaviour
     void Start()
     {
         rotoBehaviour.Connect();
+        rotoBehaviour.OnConnectionStatusChanged += RotoBehaviourOnOnConnectionStatusChanged;
     }
+
+    private void RotoBehaviourOnOnConnectionStatusChanged(ConnectionStatus status)
+    {
+        
+        if (status == ConnectionStatus.Connected)
+        {
+            rotoBehaviour.SwitchMode(ModeType.SimulationMode);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

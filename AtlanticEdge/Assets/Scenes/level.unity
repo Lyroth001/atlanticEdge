@@ -1094,6 +1094,17 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &731439308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5309855469707027682, guid: 53cc2ad67176f5f4ba24ddaafbe21e5b, type: 3}
+  m_PrefabInstance: {fileID: 16723715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a5d25fe1054ab5b1bf909b29a28118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736455822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1160,7 @@ MonoBehaviour:
   backwardButton: {fileID: 1806602911}
   leftButton: {fileID: 386002661}
   rightButton: {fileID: 1800669}
-  rotateAngle: 2
+  rotateAngle: 90
   moveDistance: 2
 --- !u!114 &886436940
 MonoBehaviour:
@@ -3193,7 +3204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9c3b0beee76244593e7ff332f4ee1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotoBehaviour: {fileID: 0}
+  rotoBehaviour: {fileID: 731439308}
 --- !u!4 &2145967215
 Transform:
   m_ObjectHideFlags: 0
