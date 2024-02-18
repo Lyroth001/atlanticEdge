@@ -9,6 +9,8 @@ public class gunButton : MonoBehaviour
     public delegate void buttonPressed();
     public event buttonPressed OnButtonPressed;
     private XRSimpleInteractable simpleInteractable;
+    public float fireRate;
+    private float lastShot = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,12 @@ public class gunButton : MonoBehaviour
         // if touched by XR controller, throw button pressed event
         if (simpleInteractable.interactorsSelecting.Any())
         {
-            OnButtonPressed?.Invoke();
+            if (Time.time > fireRate + lastShot)
+            {
+             OnButtonPressed?.Invoke();
+             lastShot = Time.time;
+            }
+            
         }
         
     }

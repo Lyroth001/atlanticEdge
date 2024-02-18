@@ -21,7 +21,8 @@ public class bulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         {
-            Debug.Log("am ded");
+            // debug log the object that the bullet collided with
+            Debug.Log($"object: {other.gameObject.name}");
             Destroy(this.gameObject);
         }
     }
