@@ -9,6 +9,8 @@ namespace RotoVR.SDK.Components
 {
     public class RotoBehaviour : MonoBehaviour
     {
+       // [SerializeField] private GameObject targetTest;
+        
         /// <summary>
         /// Setup on the component in a scene roto vr device name
         /// </summary>
@@ -109,19 +111,20 @@ namespace RotoVR.SDK.Components
                     switch (m_ModeType)
                     {
                         case ModeType.FreeMode:
-                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(0, 30));
+                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(0, 1));
                             break;
                         case ModeType.HeadTrack:
-                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(0, 30));
-                            var headCamera = Camera.main;
+                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(0, 1));
+                          //  var headCamera = Camera.main;
+                            var headCamera = m_Target;
                             if (headCamera != null)
                                 m_Roto.StartHeadTracking(this, headCamera.gameObject.transform);
                             break;
                         case ModeType.CockpitMode:
-                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(140, 30));
+                            m_Roto.SetMode(m_ModeType, new ModeParametersModel(140, 1));
                             break;
                         case ModeType.SimulationMode:
-                            m_Roto.SetMode(ModeType.FreeMode, new ModeParametersModel(0, 100));
+                            m_Roto.SetMode(ModeType.FreeMode, new ModeParametersModel(0, 1));
                             m_Roto.FollowTarget(this, m_Target);
                             break;
                     }
@@ -193,21 +196,21 @@ namespace RotoVR.SDK.Components
             switch (mode)
             {
                 case ModeType.FreeMode:
-                    m_Roto.SetMode(mode, new ModeParametersModel(0, 30));
+                    m_Roto.SetMode(mode, new ModeParametersModel(0, 1));
                     break;
                 case ModeType.HeadTrack:
                     OnModeChanged += OnModeChangedHandler;
 
-                    m_Roto.SetMode(mode, new ModeParametersModel(0, 30));
+                    m_Roto.SetMode(mode, new ModeParametersModel(0, 1));
                     var headCamera = Camera.main;
                     if (headCamera != null)
                         m_Roto.StartHeadTracking(this, headCamera.gameObject.transform);
                     break;
                 case ModeType.CockpitMode:
-                    m_Roto.SetMode(mode, new ModeParametersModel(140, 30));
+                    m_Roto.SetMode(mode, new ModeParametersModel(140, 1));
                     break;
                 case ModeType.SimulationMode:
-                    m_Roto.SetMode(ModeType.FreeMode, new ModeParametersModel(0, 100));
+                    m_Roto.SetMode(ModeType.FreeMode, new ModeParametersModel(0, 1));
                     m_Roto.FollowTarget(this, m_Target);
                     break;
             }

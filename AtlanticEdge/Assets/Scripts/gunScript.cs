@@ -31,7 +31,7 @@ public class gunScript : MonoBehaviour
         // rotate bullet by 90 degrees
         bullet.transform.Rotate(90, 0, 0);
         Debug.Log(bullet.transform.rotation);
-        rb.velocity += rb.transform.up * launchVelocity;
+        rb.velocity -= rb.transform.up * launchVelocity;
         Debug.Log(rb.velocity);
     }
 }

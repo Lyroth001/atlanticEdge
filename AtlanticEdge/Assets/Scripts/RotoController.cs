@@ -64,6 +64,7 @@ public class RotoController : MonoBehaviour
     {
         if(!_isConnected)
         {
+            _rotoBehaviour.Connect();
             return;
         }
 

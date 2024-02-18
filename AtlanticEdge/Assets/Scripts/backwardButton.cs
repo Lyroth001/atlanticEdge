@@ -4,14 +4,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class gunButton : MonoBehaviour
+public class backwardButton : MonoBehaviour
 {
     public delegate void buttonPressed();
-    public event buttonPressed OnButtonPressed;
     private XRSimpleInteractable simpleInteractable;
-    public float fireRate;
-    private float lastShot = 0.0f;
-
+    public event buttonPressed OnButtonPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,18 +18,10 @@ public class gunButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if touched by XR controller, throw button pressed event
         if (simpleInteractable.interactorsSelecting.Any())
         {
-            Debug.Log("Holy shit its working");
-            if (Time.time > fireRate + lastShot)
-            {
-             OnButtonPressed?.Invoke();
-             lastShot = Time.time;
-            }
-            
+            Debug.Log("Backward Button Pressed");
+            OnButtonPressed?.Invoke();
         }
-        
     }
-    
 }

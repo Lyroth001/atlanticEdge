@@ -13,12 +13,41 @@ public class IKcontrol : MonoBehaviour
     public Transform rightHandObj = null;
     public Transform leftHandObj = null;
     public Transform headObj = null;
-    public Transform hipObj = null;
     
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
     }
-    
+
+    void OnAnimatorIK()
+    {
+        if (_animator)
+        {
+            if (ikActive)
+            {
+                if (rightHandObj != null)
+                {
+                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                    _animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
+                    _animator.SetIKPosition(AvatarIKGoal.RightHand,rightHandObj.position);
+                    _animator.SetIKRotation(AvatarIKGoal.RightHand,rightHandObj.rotation);
+                }
+                if (leftHandObj != null)
+                {
+                    _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+                    _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
+                    _animator.SetIKPosition(AvatarIKGoal.LeftHand,leftHandObj.position);
+                    _animator.SetIKRotation(AvatarIKGoal.LeftHand,leftHandObj.rotation);
+                }
+
+                if (headObj != null)
+                {
+                    _animator.SetLookAtWeight(1);
+                    _animator.SetLookAtPosition(headObj.position);
+                }
+                
+            }
+        }
+    }
 }
