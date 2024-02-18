@@ -31,10 +31,12 @@ public class leverScript : MonoBehaviour
         if (z != 0 & z>0)
         {
             rotoController.startLeftRotation();
+            transform.parent.Rotate(0, -20, 0);
         }
         if (z != 0 & z<0)
         {
             rotoController.startRightRotation();
+            transform.parent.Rotate(0, 20, 0);
         }
         //if(z == 0)
         //{
@@ -45,6 +47,10 @@ public class leverScript : MonoBehaviour
         {
             // if not being grabbed, set z to 0
             transform.localEulerAngles = new Vector3(x, transform.localEulerAngles.y, 0);
+            // stop cockpit rotation
+            transform.parent.Rotate(0, 0, 0);
+            
+            
             
         }
         else if (!_grabInteractable.interactorsSelecting.Any() || _grabInteractable.interactorsSelecting == null)

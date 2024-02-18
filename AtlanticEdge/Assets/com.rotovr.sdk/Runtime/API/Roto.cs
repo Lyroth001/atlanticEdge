@@ -151,7 +151,7 @@ namespace RotoVR.SDK.API
         public void Connect(string deviceName)
         {
 #if !UNITY_EDITOR
-            SendMessage(new ConnectMessage(JsonConvert.SerializeObject(new DeviceDataModel(string.Empty, "D88E07F6C27E"))));
+            SendMessage(new ConnectMessage(JsonConvert.SerializeObject(new DeviceDataModel(deviceName, string.Empty))));
 #else
             UsbConnector.Instance.OnConnectionStatus += OnConnectionStatusChange;
             UsbConnector.Instance.OnDataChange += OnModelChangeHandler;
