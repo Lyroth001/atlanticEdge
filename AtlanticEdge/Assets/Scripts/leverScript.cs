@@ -12,6 +12,7 @@ public class leverScript : MonoBehaviour
     public RotoController rotoController;
     public int id;
     private XRGrabInteractable _grabInteractable = null;
+    public int rotateSpeed;
     void Start()
     {
         // get interactable
@@ -22,21 +23,22 @@ public class leverScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"{this.transform.rotation} + {this.id}");
         // get the x and z rotation of the lever
         float x = transform.localEulerAngles.x;
         float z = transform.localEulerAngles.z;
         // if x rotation is not 0, it is the rotation lever
         // if z rotation is not 0, it is the forward backward lever
         // if x rotation, call to roto chair to rotate
-        if (z != 0 & z>0)
+        if (z > 2)
         {
             rotoController.startLeftRotation();
-            transform.parent.Rotate(0, -20, 0);
+            transform.parent.Rotate(0, rotateSpeed*Time.deltaTime, 0);
         }
-        if (z != 0 & z<0)
+        if (z < -2)
         {
             rotoController.startRightRotation();
-            transform.parent.Rotate(0, 20, 0);
+            transform.parent.Rotate(0, -rotateSpeed*Time.deltaTime, 0);
         }
         //if(z == 0)
         //{
@@ -48,7 +50,7 @@ public class leverScript : MonoBehaviour
             // if not being grabbed, set z to 0
             transform.localEulerAngles = new Vector3(x, transform.localEulerAngles.y, 0);
             // stop cockpit rotation
-            transform.parent.Rotate(0, 0, 0);
+            transform.parent.rotation = Quaternion.Euler(0, transform.parent.rotation.eulerAngles.y, 0);
             
             
             
