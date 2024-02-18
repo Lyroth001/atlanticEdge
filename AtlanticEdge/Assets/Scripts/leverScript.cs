@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,15 @@ public class leverScript : MonoBehaviour
     public int id;
     private XRGrabInteractable _grabInteractable = null;
     public int rotateSpeed;
+
+    public MechaController mech;
     void Start()
     {
         // get interactable
         _grabInteractable = GetComponent<XRGrabInteractable>();
         
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -62,4 +66,5 @@ public class leverScript : MonoBehaviour
             
         }
     }
+    
 }
