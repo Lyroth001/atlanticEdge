@@ -29,6 +29,8 @@ public class gunScript : MonoBehaviour
         Debug.Log("firing");
         GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * launchVelocity);
+        // rotate bullet by 90 degrees
+        bullet.transform.Rotate(90, 0, 0);
+        rb.AddForce(transform.right * launchVelocity);
     }
 }
