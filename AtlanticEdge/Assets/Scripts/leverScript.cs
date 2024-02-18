@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class leverScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public RotoController rotoController;
+    public int id;
     private XRGrabInteractable _grabInteractable = null;
     void Start()
     {
@@ -33,15 +36,22 @@ public class leverScript : MonoBehaviour
         {
             rotoController.startRightRotation();
         }
-        if(z == 0)
-        {
-            rotoController.stopRotation();
-        }
+        //if(z == 0)
+        //{
+            //rotoController.stopRotation();
+        //}
 
-        if (!_grabInteractable.interactorsSelecting.Any()||_grabInteractable.interactorsSelecting==null)
+        if ((!_grabInteractable.interactorsSelecting.Any() || _grabInteractable.interactorsSelecting == null) & id == 0)
         {
             // if not being grabbed, set z to 0
             transform.localEulerAngles = new Vector3(x, transform.localEulerAngles.y, 0);
+            
+        }
+        else if (!_grabInteractable.interactorsSelecting.Any() || _grabInteractable.interactorsSelecting == null)
+        {
+            // if not being grabbed, set x to 0
+            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, z);
+            
         }
     }
 }

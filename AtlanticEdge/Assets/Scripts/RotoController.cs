@@ -27,10 +27,16 @@ public class RotoController : MonoBehaviour
     void Start()
     {
         _isConnected = false;
-
-        _rotoBehaviour.Connect();
-
+        
         _rotoBehaviour.OnConnectionStatusChanged += OnRotoConnectStatusChange;
+
+       // while (!_isConnected)
+        //{
+            Debug.Log("attempting to connect to roto vr chair...");
+            _rotoBehaviour.Connect();
+        //}
+
+        //_rotoBehaviour.Calibration();
 
         _rotoBehaviour.OnDataChanged += OnRotoDataChanged;
     }
