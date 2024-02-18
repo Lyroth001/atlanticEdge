@@ -8,7 +8,7 @@ public class MechaController : MonoBehaviour
     public Rigidbody rb;
     public float rotateForce = 100;
     public Transform Transform;
-
+    
     public void rotate(float targetSpeed)
     {
         var rotateSpeed = Vector3.Cross(rb.angularVelocity, Transform.up).magnitude;
